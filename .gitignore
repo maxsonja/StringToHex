@@ -7,12 +7,13 @@ byte charToInt(char input)
 
 byte toHex(String input)
 {
+  input.toUpperCase();
   byte result = 0x00;
   if(input.length()==4) input = input.substring(2);
   else if(input.length()==3||input.length()>4) return Ox00;
   
   result=charToInt(input.charAt(0));
   result=result<<4;
-  result+=charToInt(input.charAt(0));
+  result+=charToInt(input.charAt(1));
   return result;
 }

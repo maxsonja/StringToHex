@@ -2,7 +2,7 @@
 #include "Arduino.h"
 
 //converts one char to real value
-byte intValue(char input)
+byte value(char input)
 {
   if(input >47 && input<58) return input-48;
   else if(input > 64 && input<71) return input-65+10;
@@ -17,9 +17,9 @@ byte toHex(String input)
   if(input.length()==4) input = input.substring(2);
   else if(input.length()==3||input.length()>4) return 0x00;
   //
-  result=intValue(input.charAt(0)); //first hex
+  result=value(input.charAt(0)); //first hex
   result=result<<4; //bitshift 4 places to the left
-  result+=intValue(input.charAt(1)); //second hex
+  result+=value(input.charAt(1)); //second hex
   return result;
 }
 	
@@ -48,7 +48,7 @@ float toFloat(String var)
   for(int i = dot+1; i< var.length(); i++)
   {
     fpoint *= 0.1;
-    result = result + (intValue(var.charAt(i))*fpoint);
+    result = result + (value(var.charAt(i))*fpoint);
   }
   
   //fix negative number
@@ -74,7 +74,7 @@ long toInt(String input)
   
   for (int i=0; i<input.length(); i++)
   {
-    result = (result*10) + intValue(input.charAt(i));
+    result = (result*10) + value(input.charAt(i));
   }
   if(negative) result*=-1;
   return result;

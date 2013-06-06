@@ -2,14 +2,14 @@
 #include "Arduino.h"
 
 //converts one char to real value
-byte value(char input)
+byte Convert::value(char input)
 {
   if(input >47 && input<58) return input-48;
   else if(input > 64 && input<71) return input-65+10;
   else return 0;
 }
 
-byte toHex(String input)
+byte Convert::toHex(String input)
 {
   input.toUpperCase();
   byte result = 0x00;
@@ -24,7 +24,7 @@ byte toHex(String input)
 }
 	
 
-float toFloat(String var)
+float Convert::toFloat(String var)
 {
   long dot = var.indexOf(".");
   boolean negative = false;
@@ -61,7 +61,7 @@ float toFloat(String var)
   
 }
 
-long toInt(String input)
+long Convert::toInt(String input)
 {
   boolean negative = false;
   long result = 0;

@@ -1,0 +1,5 @@
+Convert KEYWORD1
+Value KEYWORD2
+toHex KEYWORD2
+toFloat KEYWORD2
+toInt KEYWORD2

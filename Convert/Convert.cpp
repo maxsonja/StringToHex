@@ -1,5 +1,5 @@
-#include "Convert.h"
 #include "Arduino.h"
+#include "Convert.h"
 
 //converts one char to real value
 byte Convert::value(char input)
